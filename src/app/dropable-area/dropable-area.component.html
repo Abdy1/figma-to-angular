@@ -1,0 +1,94 @@
+<div class="area">
+    <p-menubar *ngIf="!showForm" [style]="{'height':'50px','background-color':'white'}" [model]="menus"></p-menubar>
+  
+    <div *ngIf="showForm" [ngClass]="currentLayout">
+      <form>
+        <div class="form-container"   >
+          <!-- Layout 1: One big input -->
+          <div *ngIf="currentLayout === 'layout-1'">
+            <input *ngFor="let item of formPlaceholders.slice(0,1)" type="text" pInputText [attr.placeholder]="item" />
+          </div>
+  
+          <!-- Layout 2: Two items right and left -->
+          <div *ngIf="currentLayout === 'layout-2'">
+            <input *ngFor="let item of formPlaceholders.slice(0, 2)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+          </div>
+  
+          <!-- Layout 3: Two items up and down -->
+          <div *ngIf="currentLayout === 'layout-3'">
+            <div *ngFor="let item of formPlaceholders.slice(0, 2)" class="input-group">
+              <input type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+          </div>
+  
+          <!-- Layout 4: Three items right and left -->
+          <div *ngIf="currentLayout === 'layout-4'">
+            <input *ngFor="let item of formPlaceholders.slice(0, 3)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+          </div>
+  
+          <!-- Layout 5: Three items - one left, two right stacked up and down -->
+          <div *ngIf="currentLayout === 'layout-5'" class="layout-5">
+            <div class="left-column">
+              <input *ngFor="let item of formPlaceholders.slice(0, 1)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+            <div class="right-column">
+              <input *ngFor="let item of formPlaceholders.slice(1, 3)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+          </div>
+  
+          <!-- Layout 6: Three items - one left, two right stacked vertically -->
+          <div *ngIf="currentLayout === 'layout-6'" class="layout-6">
+            <div class="left-column">
+              <input *ngFor="let item of formPlaceholders.slice(0, 1)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+            <div class="right-column">
+              <input *ngFor="let item of formPlaceholders.slice(1, 3)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+          </div>
+  
+          <!-- Layout 7: Three items - top-right, left-bottom -->
+          <div *ngIf="currentLayout === 'layout-7'" class="layout-7">
+            <div class="top-left">
+              <input *ngFor="let item of formPlaceholders.slice(0, 1)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+            <div class="top-right">
+              <input *ngFor="let item of formPlaceholders.slice(1, 2)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+            <div class="bottom-left">
+              <input *ngFor="let item of formPlaceholders.slice(2, 3)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+            <div class="bottom-right">
+              <input *ngFor="let item of formPlaceholders.slice(3, 4)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+          </div>
+  
+          <!-- Layout 8: Three items - one top, two bottom stacked -->
+          <div *ngIf="currentLayout === 'layout-8'" class="layout-8">
+            <div class="top-item">
+              <input *ngFor="let item of formPlaceholders.slice(0, 1)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+            <div class="bottom-items">
+              <input *ngFor="let item of formPlaceholders.slice(1, 3)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+          </div>
+  
+          <!-- Layout 9: Four items - top, right, left, bottom -->
+          <div *ngIf="currentLayout === 'layout-9'" class="layout-9">
+            <div class="top-left">
+              <input *ngFor="let item of formPlaceholders.slice(0, 1)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+            <div class="top-right">
+              <input *ngFor="let item of formPlaceholders.slice(1, 2)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+            <div class="bottom-left">
+              <input *ngFor="let item of formPlaceholders.slice(2, 3)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+            <div class="bottom-right">
+              <input *ngFor="let item of formPlaceholders.slice(3, 4)" type="text" pInputText [attr.placeholder]="item.placeholder" />
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  

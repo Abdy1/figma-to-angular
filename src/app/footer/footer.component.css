@@ -1,0 +1,64 @@
+/* Footer container styling */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid #ddd;
+}
+
+/* Pagination styling */
+.pagination {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+/* Pagination button styling */
+.pagination-button {
+  color: #6A7178;
+  border: none;
+  margin-right: 10px;
+}
+
+/* Page info container styling */
+.page-info {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* Page number styling */
+.page-number {
+  border: 1px solid #16AA00;
+  color: #6A7178;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+/* Add Page button styling */
+.add-page {
+  border: 1px solid #6A7178;
+  color: #6A7178;
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px; /* Adjust font size for better visibility */
+}
+
+.add-page:hover {
+  background-color: #0056b3;
+  color: white; /* Adjust text color on hover if needed */
+}
+

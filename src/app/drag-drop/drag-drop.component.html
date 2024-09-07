@@ -1,0 +1,42 @@
+<div class="drag-drop-container">
+  <p-menubar [style]="{'height':'80px','background-color':'white'}" [model]="menus"/>
+   <div class="sections">
+    <div class="left-section" pDroppable >
+      <div class="section1">
+        <app-dropable-area #dropableArea pDroppable (onDrop)="drop()"></app-dropable-area>
+      </div>
+      <div class="section1">
+        <app-dropable-area ></app-dropable-area>
+      </div>
+      <div class="section1">
+        <app-dropable-area></app-dropable-area>
+      </div>
+      <div class="section1">
+        <app-dropable-area ></app-dropable-area>
+      </div>
+      <!-- Content for the left section goes here -->
+    </div>
+    <div class="right-section">
+      <h2>Available Fields</h2>
+
+      <div class="form-sections" *ngFor="let area of areas">
+
+        <div class="form-section">
+          <label>{{ area.label }}</label>
+          <div class="fields-container">
+            <div class="field-pair" *ngFor="let field of area.fields; let i = index">
+              <input type="text" [placeholder]="field"    pDraggable 
+              (onDragStart)="dragStart(field)" 
+              (onDragEnd)="dragEnd()" />
+              <input *ngIf="i % 2 === 0 && i + 1 < area.fields.length" type="text" [placeholder]="area.fields[i + 1]"
+              pDraggable 
+              (onDragStart)="dragStart(field)" 
+              (onDragEnd)="dragEnd()" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+   </div>
+</div>

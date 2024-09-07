@@ -1,0 +1,105 @@
+
+
+/* CSS Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.drag-drop-container {
+  background-color: #F6F7F8;
+  margin: 0;
+  padding: 20px;
+}
+
+.sections{
+  display: flex;
+  padding: 80px 0;
+  height: 900px;
+}
+.left-section {
+  background-color: white !important;
+  flex: 0 0 50%; /* Takes 60% of the width */
+  background-color: #f0f0f0; /* Example background color */
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Drop shadow effect */
+  margin-right: 10%; /* Creates a space between the left and right sections */
+}
+
+.right-section {
+  flex: 0 0 40%; /* Takes the remaining 40% of the width */
+}
+.scroll-wrapper {
+  direction: rtl; /* Sets the direction to right-to-left for the wrapper */
+}
+
+.right-section {
+  width: calc(100% - 10px); /* Adjust width to account for the scrollbar width */
+  height: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: scroll; /* Enables vertical scrolling */
+  position: relative;
+  direction: ltr; /* Keeps the content direction left-to-right */
+  background-color: bl;
+}
+
+.right-section::-webkit-scrollbar {
+  width: 10px; /* Width of the scrollbar */
+}
+
+.right-section::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.right-section::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.right-section::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #555;
+}
+
+.fields-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Space between rows */
+}
+
+.field-pair {
+  width: 100%;
+  display: flex;
+  gap: 20px; /* Space between two inputs in a row */
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: calc(50% - 10px); /* Each input takes up half the width of the container minus the gap */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 16px;
+}
