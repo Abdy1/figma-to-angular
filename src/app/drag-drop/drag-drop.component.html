@@ -6,13 +6,13 @@
         <app-dropable-area #dropableArea pDroppable (onDrop)="drop()"></app-dropable-area>
       </div>
       <div class="section1">
-        <app-dropable-area ></app-dropable-area>
+        <app-dropable-area2  #dropableArea2 pDroppable (onDrop)="drop2()"></app-dropable-area2>
       </div>
       <div class="section1">
-        <app-dropable-area></app-dropable-area>
+        <app-dropable-area3 #dropableArea3 pDroppable (onDrop)="drop3()"></app-dropable-area3>
       </div>
       <div class="section1">
-        <app-dropable-area ></app-dropable-area>
+        <app-dropable-area4  #dropableArea4 pDroppable (onDrop)="drop4()" ></app-dropable-area4>
       </div>
       <!-- Content for the left section goes here -->
     </div>
@@ -26,10 +26,6 @@
           <div class="fields-container">
             <div class="field-pair" *ngFor="let field of area.fields; let i = index">
               <input type="text" [placeholder]="field"    pDraggable 
-              (onDragStart)="dragStart(field)" 
-              (onDragEnd)="dragEnd()" />
-              <input *ngIf="i % 2 === 0 && i + 1 < area.fields.length" type="text" [placeholder]="area.fields[i + 1]"
-              pDraggable 
               (onDragStart)="dragStart(field)" 
               (onDragEnd)="dragEnd()" />
             </div>

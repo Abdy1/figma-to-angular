@@ -3,6 +3,9 @@ import { MenuItem } from 'primeng/api';
 import { OverlayPanel } from 'primeng/overlaypanel';
 import { DragDropService } from '../drag-drop.service';
 import { DropableAreaComponent } from '../dropable-area/dropable-area.component';
+import { DropableAreaComponent2 } from '../dropable-area1/dropable-area.component';
+import { DropableAreaComponent3 } from '../dropable-area2/dropable-area.component';
+import { DropableAreaComponent4 } from '../dropable-area3/dropable-area.component';
 
 @Component({
   selector: 'app-drag-drop',
@@ -20,6 +23,9 @@ import { DropableAreaComponent } from '../dropable-area/dropable-area.component'
 
 export class DragDropComponent implements OnInit {
   @ViewChild('dropableArea') dropableArea!: DropableAreaComponent;
+  @ViewChild('dropableArea2') dropableArea2!: DropableAreaComponent2;
+  @ViewChild('dropableArea3') dropableArea3!: DropableAreaComponent3;
+  @ViewChild('dropableArea4') dropableArea4!: DropableAreaComponent4;
   constructor(private dragDropService: DragDropService) { }
 
   formItems: any[] = [];
@@ -29,14 +35,8 @@ export class DragDropComponent implements OnInit {
   @Output() itemDragged = new EventEmitter<any>();
 
   availableItems: any[] | undefined;
-  selectedItems: any[] | undefined;
   areas: any[] | undefined;
 
-  // course details
-  // Course Code, Course Title
-
-  // Semester/Trimester Details
-  // Semester/Trimester Name, Start Date 
 
   ngOnInit(): void {
 
@@ -44,19 +44,19 @@ export class DragDropComponent implements OnInit {
     this.areas = [
       {
         label: "Course Details",
-        fields: ["Course Code", "Course Title"]
+        fields: ["Course Code", "Course Title","Date of Birth","Gender"]
       },
       {
         label: "Semester/Trimester Details",
-        fields: ["Semester/Trimester Name", "Start Date"]
+        fields: ["Semester/Trimester Name", "Start Date","Institution Address","Accreditation Information"]
       },
       {
         label: "Overall Academic Performance",
-        fields: ["Cumulative Grade Point Average (CGPA)", "Total Credit Hours"]
+        fields: ["Cumulative Grade Point Average (CGPA)", "Total Credit Hours","Department","Faculty"]
       },
       {
         label: "Degree/Certificate Information",
-        fields: ["Degree/Certificate Title", "Degree/Certificate Conferred Date"]
+        fields: ["Degree/Certificate Title", "Degree/Certificate Conferred Date","Honors/Awards"]
       },
       {
         label: "Signature and Seal",
@@ -64,14 +64,13 @@ export class DragDropComponent implements OnInit {
       },
       {
         label: "Additional Information",
-        fields: ["Academic Honors", "Extracurricular Activities"]
+        fields: ["Academic Honors", "Extracurricular Activities","Course Credit Hours"," Course Grade"]
       },
       {
         label: "Extras",
-        fields: ["Data Type", "Text"]
+        fields: ["Data Type", "Text","Line"]
       }
     ];
-    this.selectedItems = [];
     this.availableItems = [
       { placeholder: 'First Name' },
       { placeholder: 'Last Name' },
@@ -98,10 +97,6 @@ export class DragDropComponent implements OnInit {
       }
     ]
   }
-  ngAfterViewInit() {
-    // Ensure the child component is available
-    console.log('DropableComponent:', this.dropableArea);
-  }
 
 
 
@@ -109,24 +104,50 @@ export class DragDropComponent implements OnInit {
 
 
   drop() {
-    console.log('Parent: Dropped Item:', this.draggedItem);
     if (this.draggedItem) {
-      this.selectedItems = [...(this.selectedItems as any[]), this.draggedItem];
-      // Pass the dragged item to the child component before calling its drop method
       this.dropableArea.draggableItem = this.draggedItem;
       this.draggedItem = null;
     }
 
     if (this.dropableArea) {
-      this.dropableArea.drop(); // Call the drop method in the child component
+      this.dropableArea.drop(); 
+    }
+  }
+
+  drop2() {
+    if (this.draggedItem) {
+      this.dropableArea2.draggableItem = this.draggedItem;
+      this.draggedItem = null;
+    }
+
+    if (this.dropableArea2) {
+      this.dropableArea2.drop(); 
+    }
+  }
+  drop3() {
+    if (this.draggedItem) {
+      this.dropableArea3.draggableItem = this.draggedItem;
+      this.draggedItem = null;
+    }
+
+    if (this.dropableArea3) {
+      this.dropableArea3.drop(); 
+    }
+  }
+  drop4() {
+    if (this.draggedItem) {
+      this.dropableArea4.draggableItem = this.draggedItem;
+      this.draggedItem = null;
+    }
+
+    if (this.dropableArea4) {
+      this.dropableArea4.drop(); 
     }
   }
 
 
 
-
   dragStart(product: any) {
-    console.log(product)
     this.draggedItem = product;
   }
 

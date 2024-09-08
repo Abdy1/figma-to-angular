@@ -2,11 +2,11 @@ import { Component, Input, OnInit } from '@angular/core';
 import { DragDropService } from '../drag-drop.service';
 
 @Component({
-  selector: 'app-dropable-area',
+  selector: 'app-dropable-area2',
   templateUrl: './dropable-area.component.html',
   styleUrls: ['./dropable-area.component.css']
 })
-export class DropableAreaComponent implements OnInit {
+export class DropableAreaComponent2 implements OnInit {
   @Input() draggableItem: any; 
   dragData: any;
   showForm:boolean = false;
@@ -14,8 +14,9 @@ export class DropableAreaComponent implements OnInit {
   first: any[] =  [];
 
 
+
   menus:any[] = []
-  // showForm: boolean = false;
+
   currentLayout:string = "";
 
   constructor(private dragDropService: DragDropService) {}
@@ -70,7 +71,7 @@ export class DropableAreaComponent implements OnInit {
 
   }
   drop() {
-
+  
 
     if(this.currentLayout == 'layout-1'){
       this.first = []
@@ -86,7 +87,7 @@ export class DropableAreaComponent implements OnInit {
     }
 
     this.first.push(this.draggableItem);
-  
+
 
 
 

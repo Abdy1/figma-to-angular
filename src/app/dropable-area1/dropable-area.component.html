@@ -2,7 +2,7 @@
   <p-menubar *ngIf="!showForm" [style]="{'height':'50px','background-color':'white'}" [model]="menus"></p-menubar>
   <div *ngIf="showForm" [ngClass]="currentLayout">
     <form>
-      <div class="form-container" >
+      <div class="form-container">
         <input *ngFor="let item of first" type="text" pInputText [attr.placeholder]="item" />
       </div>
     </form>

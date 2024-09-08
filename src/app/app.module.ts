@@ -11,6 +11,9 @@ import { MenubarModule } from 'primeng/menubar';
 import { ButtonModule } from 'primeng/button';
 import { DragDropModule } from 'primeng/dragdrop';
 import { DropableAreaComponent } from './dropable-area/dropable-area.component';
+import { DropableAreaComponent2 } from './dropable-area1/dropable-area.component';
+import { DropableAreaComponent3 } from './dropable-area2/dropable-area.component';
+import { DropableAreaComponent4 } from './dropable-area3/dropable-area.component';
 import { CommonModule } from '@angular/common';
 
 @NgModule({
@@ -22,6 +25,9 @@ import { CommonModule } from '@angular/common';
     FooterComponent,
     LayoutComponent,
     DropableAreaComponent,
+    DropableAreaComponent2,
+    DropableAreaComponent3,
+    DropableAreaComponent4
   ],
   imports: [
     BrowserModule,

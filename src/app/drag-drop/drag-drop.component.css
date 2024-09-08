@@ -68,9 +68,7 @@ h2 {
   margin-bottom: 20px;
   color: #333;
   font-size: 24px;
-}
-
-.form-section {
+}.form-section {
   margin-bottom: 30px;
 }
 
@@ -83,23 +81,42 @@ label {
 }
 
 .fields-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px; /* Space between rows */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 20px; /* Space between fields */
+  height: 200px; /* Adjust height based on your needs */
 }
 
 .field-pair {
-  width: 100%;
   display: flex;
-  gap: 20px; /* Space between two inputs in a row */
-  margin-bottom: 20px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
 }
 
 input[type="text"] {
-  width: calc(50% - 10px); /* Each input takes up half the width of the container minus the gap */
+  width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
   font-size: 16px;
+}
+
+/* Position the items in the desired grid areas */
+.field-pair:nth-child(1) {
+  grid-area: 1 / 1; /* Top-left */
+}
+
+.field-pair:nth-child(2) {
+  grid-area: 1 / 2; /* Top-right */
+}
+
+.field-pair:nth-child(3) {
+  grid-area: 2 / 1; /* Bottom-left */
+}
+
+.field-pair:nth-child(4) {
+  grid-area: 2 / 2; /* Bottom-right */
 }
